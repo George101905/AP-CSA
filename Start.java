@@ -15,5 +15,9 @@ public class Start {
         System.out.println(str);
         System.out.println(int1);
 
+        for(String s : str){
+            
+        }
+
     }  
 }
