@@ -1,8 +1,9 @@
 package LinearStructures;
+import java.util.Iterator; //interface
 
 
 //This is a generic class
-public class ArrayList<E> {
+public class ArrayList<E> implements Iterable<E> {
     //what is protected
     //protected is public in the package private outside the package
     protected static final int INITIAL_CAPACITY = 10;
@@ -135,11 +136,23 @@ public class ArrayList<E> {
         }
     }
 
+    public Iterator<E> iterator(){
+        return new ArrayListIterator();
+    }
 
+   private class ArrayListIterator implements Iterator<E> {
+        int current = 0;
 
-    // TODO: bring over the toString from IntVector
-    // Test this ArrayList class' add functions in Main
-    // Push to github
+        public boolean hasNext(){
+            return(current < size);
+        }
 
-   
+        public E next() {
+            return data[current++];
+        }
+
+        public void remove() {
+            ArrayList.this.remove(current);
+        }
+   }
 }
