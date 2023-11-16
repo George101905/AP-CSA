@@ -1,7 +1,7 @@
 package LinearStructures;
 import java.util.Iterator;
 
-public class LinkedList<E> {
+public class LinkedList<E> implements Iterable<E> {
     private int size = 0;
 
     private Node<E> head, tail;
